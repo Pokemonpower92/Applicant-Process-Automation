@@ -1,0 +1,48 @@
+.ApplicationFormPage {
+	/* background-color: aqua; */
+}
+
+.ApplicationFormPage-unsubmitted {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-width: 60%;
+}
+.ApplicationFormPage-unsubmitted-header {
+	text-align: center;
+}
+
+.ApplicationFormPage-unsubmitted-form {
+	/* background-color: blueviolet; */
+	margin-right: 45%;
+	margin-left: 45%;
+	min-width: 45%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.ApplicationFormPage-unsubmitted-form-textInput {
+	/* background-color: aliceblue; */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 80%;
+	min-width: 25rem;
+	margin-bottom: 2%;
+}
+
+.ApplicationFormPage-unsubmitted-form-radioInput {
+	/* background-color: aliceblue; */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 80%;
+	min-width: 25rem;
+	margin-bottom: 2%;
+}
+
+.ApplicationFormPage-unsubmitted-form-textInput input {
+	width: 15rem;
+	max-height: 1rem;
+}
