@@ -15,8 +15,8 @@ class ApplicationFormPage extends Component {
 			phone: "",
 			email: "",
 			citizen: false,
-			previousExperience: false,
-			militaryExperience: false,
+			previousExperience: "",
+			militaryExperience: "",
 			contactAgreement: false,
 		};
 
@@ -227,26 +227,6 @@ class ApplicationFormPage extends Component {
 						></input>
 					</div>
 					<div className="ApplicationFormPage-unsubmitted-form-radioInput">
-						<label>Previous Experience: </label>
-						<input
-							type="radio"
-							name="previousExperience"
-							value={this.state.previousExperience}
-							onChange={this.handlePreviousExperienceChange}
-							className="ApplicationFormPage-unsubmitted-form-previousExperience"
-						></input>
-					</div>
-					<div className="ApplicationFormPage-unsubmitted-form-radioInput">
-						<label>Military Experience: </label>
-						<input
-							type="radio"
-							name="militaryExperience"
-							value={this.state.militaryExperience}
-							onChange={this.handleMilitaryExperienceChange}
-							className="ApplicationFormPage-unsubmitted-form-militaryExperience"
-						></input>
-					</div>
-					<div className="ApplicationFormPage-unsubmitted-form-radioInput">
 						<label>Contact via text: </label>
 						<input
 							type="radio"
@@ -255,6 +235,28 @@ class ApplicationFormPage extends Component {
 							onChange={this.handleContactAgreementChange}
 							className="ApplicationFormPage-unsubmitted-form-contactAgreement"
 						></input>
+					</div>
+					<div className="ApplicationFormPage-unsubmitted-form-textarea">
+						<label>Previous Experience: </label>
+						<textarea
+							type="textarea"
+							name="previousExperience"
+							value={this.state.previousExperience}
+							placeholder="Leave blank if not applicable."
+							onChange={this.handlePreviousExperienceChange}
+							className="ApplicationFormPage-unsubmitted-form-previousExperience"
+						></textarea>
+					</div>
+					<div className="ApplicationFormPage-unsubmitted-form-textarea">
+						<label>Military Experience: </label>
+						<textarea
+							type="radio"
+							name="militaryExperience"
+							value={this.state.militaryExperience}
+							placeholder="Leave blank if not applicable."
+							onChange={this.handleMilitaryExperienceChange}
+							className="ApplicationFormPage-unsubmitted-form-militaryExperience"
+						></textarea>
 					</div>
 				</form>
 			</div>

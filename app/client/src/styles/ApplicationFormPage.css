@@ -32,6 +32,19 @@
 	margin-bottom: 2%;
 }
 
+.ApplicationFormPage-unsubmitted-form-textarea {
+	/* background-color: aliceblue; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 80%;
+	min-width: 25rem;
+	margin-bottom: 2%;
+}
+.ApplicationFormPage-unsubmitted-form-textarea textarea {
+	height: 5rem;
+}
+
 .ApplicationFormPage-unsubmitted-form-radioInput {
 	/* background-color: aliceblue; */
 	display: flex;
