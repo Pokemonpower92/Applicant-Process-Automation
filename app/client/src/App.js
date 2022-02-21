@@ -1,4 +1,4 @@
-import "./styles/App.css";
+import "./styles/pages/App.css";
 import {
 	HomePage,
 	ApplicationFormPage,

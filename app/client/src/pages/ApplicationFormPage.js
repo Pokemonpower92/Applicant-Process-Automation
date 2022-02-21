@@ -1,5 +1,5 @@
 import { Component } from "react";
-import "../styles/ApplicationFormPage.css";
+import "../styles/pages/ApplicationFormPage.css";
 
 class ApplicationFormPage extends Component {
 	constructor(props) {
