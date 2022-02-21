@@ -7,6 +7,7 @@
 */
 import HomePage from "./HomePage";
 import LoginPage from "./LoginPage";
+import Dashboard from "./Dashboard";
 import ApplicationFormPage from "./ApplicationFormPage";
 
-export { HomePage, LoginPage, ApplicationFormPage };
+export { HomePage, LoginPage, Dashboard, ApplicationFormPage };
