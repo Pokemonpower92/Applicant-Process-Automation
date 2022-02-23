@@ -55,6 +55,16 @@
 	margin-bottom: 2%;
 }
 
+.ApplicationFormPage-unsubmitted-form-radioGroup {
+	/* background-color: aliceblue; */
+	margin-left: auto;
+}
+
+.ApplicationFormPage-unsubmitted-form-radioGroup input {
+	/* background-color: aliceblue; */
+	margin-left: 10px;
+}
+
 .ApplicationFormPage-unsubmitted-form-textInput input {
 	width: 15rem;
 	max-height: 1rem;

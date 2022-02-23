@@ -1,4 +1,9 @@
 .Dashboard-applicantlist {
-	background-color: aqua;
+	background-color: rgb(202, 202, 202);
 	height: 100vh;
+}
+
+.nav-link.active {
+	color: white !important;
+	background-color: orangered !important;
 }
