@@ -98,8 +98,9 @@ class ApplicationFormPage extends Component {
 	};
 
 	handleCitizenChange = (e) => {
+		const eValue = e.currentTarget.value === "true" ? true : false;
 		this.setState({
-			[e.target.name]: e.target.value,
+			[e.target.name]: eValue,
 		});
 	};
 
@@ -116,8 +117,9 @@ class ApplicationFormPage extends Component {
 	};
 
 	handleContactAggreementChange = (e) => {
+		const eValue = e.currentTarget.value === "true" ? true : false;
 		this.setState({
-			[e.target.name]: e.target.value,
+			[e.target.name]: eValue,
 		});
 	};
 
@@ -218,23 +220,49 @@ class ApplicationFormPage extends Component {
 					</div>
 					<div className="ApplicationFormPage-unsubmitted-form-radioInput">
 						<label>US Citizen: </label>
-						<input
-							type="radio"
-							name="citizen"
-							value={this.state.citizen}
-							onChange={this.handleCitizenChange}
-							className="ApplicationFormPage-unsubmitted-form-citizen"
-						></input>
+						<div className="ApplicationFormPage-unsubmitted-form-radioGroup">
+							<input
+								type="radio"
+								name="citizen"
+								value={true}
+								checked={this.state.citizen === true}
+								onChange={this.handleCitizenChange}
+								className="ApplicationFormPage-unsubmitted-form-citizen"
+							/>
+							Yes
+							<input
+								type="radio"
+								name="citizen"
+								value={false}
+								checked={this.state.citizen === false}
+								onChange={this.handleCitizenChange}
+								className="ApplicationFormPage-unsubmitted-form-citizen"
+							/>
+							No
+						</div>
 					</div>
 					<div className="ApplicationFormPage-unsubmitted-form-radioInput">
-						<label>Contact via text: </label>
-						<input
-							type="radio"
-							name="contactAgreement"
-							value={this.state.contactAgreement}
-							onChange={this.handleContactAgreementChange}
-							className="ApplicationFormPage-unsubmitted-form-contactAgreement"
-						></input>
+						<label>Permission to Contact: </label>
+						<div className="ApplicationFormPage-unsubmitted-form-radioGroup">
+							<input
+								type="radio"
+								name="contactAgreement"
+								value={true}
+								checked={this.state.contactAgreement === true}
+								onChange={this.handleContactAggreementChange}
+								className="ApplicationFormPage-unsubmitted-form-citizen"
+							/>
+							Yes
+							<input
+								type="radio"
+								name="contactAgreement"
+								value={false}
+								checked={this.state.contactAgreement === false}
+								onChange={this.handleContactAggreementChange}
+								className="ApplicationFormPage-unsubmitted-form-citizen"
+							/>
+							No
+						</div>
 					</div>
 					<div className="ApplicationFormPage-unsubmitted-form-textarea">
 						<label>Previous Experience: </label>

@@ -14,21 +14,21 @@ function ApplicantCard(props) {
 				<div className="ApplicantCard-content">
 					<Card.Body>
 						<Card.Title>Applicant Name</Card.Title>
-						<Card.Subtitle>Status Field</Card.Subtitle>
-						<Card.Text>Major</Card.Text>
+						<Card.Subtitle>UTK ID</Card.Subtitle>
+						<br></br>
 						<ListGroup
 							className="ApplicantCard-listgroup"
 							variant="flush"
 						>
 							<div className="ApplicantCard-rating">
 								<ListGroupItem className="ApplicantCard-listitem">
+									Major
+								</ListGroupItem>
+								<ListGroupItem className="ApplicantCard-listitem">
 									GPA
 								</ListGroupItem>
 								<ListGroupItem className="ApplicantCard-listitem">
-									Other Information
-								</ListGroupItem>
-								<ListGroupItem className="ApplicantCard-listitem">
-									Yet more information
+									Other important information
 								</ListGroupItem>
 							</div>
 						</ListGroup>
@@ -39,10 +39,13 @@ function ApplicantCard(props) {
 					>
 						<div className="ApplicantCard-rating">
 							<ListGroupItem className="ApplicantCard-listitem">
-								Verify
+								More Information (Admin only)
 							</ListGroupItem>
 							<ListGroupItem className="ApplicantCard-listitem">
 								Flag
+							</ListGroupItem>
+							<ListGroupItem className="ApplicantCard-listitem">
+								Verify
 							</ListGroupItem>
 						</div>
 					</ListGroup>
