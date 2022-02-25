@@ -5,7 +5,17 @@ createApplication = async (req, res) => {
 };
 
 getApplications = async (req, res) => {
+    const applications = await Application.find();
 
+    if (applications) {
+        res.status(200).json({
+            data: applications,
+        });
+    } else {
+        res.status(404).json({
+            message: `No Applications Found`,
+        });
+    }
 };
 
 getApplicationById = async (req, res) => {
