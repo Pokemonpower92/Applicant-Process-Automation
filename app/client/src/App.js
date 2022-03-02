@@ -1,25 +1,27 @@
 import "./styles/pages/App.css";
 import {
-	HomePage,
+	Homepage,
 	ApplicationFormPage,
 	LoginPage,
 	Dashboard,
 } from "./pages/index";
+import HeaderBar from "./components/ApplicationNavbar";
 import { Route } from "react-router-dom";
 
 function App() {
 	return (
 		<div className="App">
+			<HeaderBar />
 			<div className="App-Homepage">
 				<Route
 					path="/"
 					exact
-					render={(props) => <HomePage {...props} />}
+					render={(props) => <Homepage {...props} />}
 				/>
 			</div>
 			<div className="App-ApplicationFormPage">
 				<Route
-					path="/ApplicationForm"
+					path="/Application"
 					exact
 					render={(props) => <ApplicationFormPage {...props} />}
 				/>

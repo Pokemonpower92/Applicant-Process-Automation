@@ -5,5 +5,9 @@
 
 .nav-link.active {
 	color: white !important;
-	background-color: orangered !important;
+	background-color: #ff8200 !important;
+}
+
+.Dashboard {
+	background-color: #f6f6f6;
 }
