@@ -5,9 +5,9 @@
     export object like 'HomePage'
     
 */
-import HomePage from "./HomePage";
+import Homepage from "./Homepage";
 import LoginPage from "./LoginPage";
 import Dashboard from "./Dashboard";
 import ApplicationFormPage from "./ApplicationFormPage";
 
-export { HomePage, LoginPage, Dashboard, ApplicationFormPage };
+export { Homepage, LoginPage, Dashboard, ApplicationFormPage };

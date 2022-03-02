@@ -135,7 +135,7 @@ class ApplicationFormPage extends Component {
 		const unsubmitted = (
 			<div className="ApplicationFormPage-unsubmitted">
 				<div className="ApplicationFormPage-unsubmitted-header">
-					<h1>Please fill out the following form.</h1>
+					<h2>Student Information</h2>
 				</div>
 				<form className="ApplicationFormPage-unsubmitted-form">
 					<div className="ApplicationFormPage-unsubmitted-form-textInput">
@@ -159,7 +159,7 @@ class ApplicationFormPage extends Component {
 						></input>
 					</div>
 					<div className="ApplicationFormPage-unsubmitted-form-textInput">
-						<label>Address: </label>
+						<label>Street Address: </label>
 						<input
 							type="text"
 							name="address"
