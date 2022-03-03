@@ -2,6 +2,10 @@
 	/* background-color: aqua; */
 }
 
+label {
+	color: grey;
+}
+
 .ApplicationFormPage-unsubmitted {
 	display: flex;
 	flex-direction: column;
@@ -24,18 +28,113 @@
 	margin-left: 45%;
 	min-width: 45%;
 	display: flex;
-	align-items: center;
+	align-items: left;
 	flex-direction: column;
 }
 
-.ApplicationFormPage-unsubmitted-form-textInput {
-	/* background-color: aliceblue; */
+/* Name feilds */
+.ApplicationFormPage-unsubmitted-form-name {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 5%;
+}
+
+.ApplicationFormPage-unsubmitted-form-name-fields {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	width: 80%;
-	min-width: 25rem;
-	margin-bottom: 2%;
+}
+
+.ApplicationFormPage-unsubmitted-form-nameTextInput {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 10px;
+}
+
+.ApplicationFormPage-unsubmitted-form-inputTitle {
+	font-size: larger;
+	margin-left: 10px;
+}
+
+/* Address feilds */
+.ApplicationFormPage-unsubmitted-form-address {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 5%;
+}
+
+.ApplicationFormPage-unsubmitted-form-address-other {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.ApplicationFormPage-unsubmitted-form-otherTextInput {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 10px;
+}
+
+.ApplicationFormPage-unsubmitted-form-streetTextInput {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 10px;
+}
+
+.ApplicationFormPage-unsubmitted-form-streetTextInput input {
+	width: 20rem;
+}
+
+.ApplicationFormPage-unsubmitted-form-address-other {
+	display: flex;
+}
+
+/* Contact Feilds */
+.ApplicationFormPage-unsubmitted-form-contact {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 5%;
+}
+
+.ApplicationFormPage-unsubmitted-form-contact-details {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.ApplicationFormPage-unsubmitted-form-contactTextInput {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 10px;
+}
+
+.ApplicationFormPage-unsubmitted-form-contactTextInput input {
+	width: 15rem;
+}
+
+/* Experience Feilds */
+.ApplicationFormPage-unsubmitted-form-experience {
+	margin-bottom: 5%;
+}
+
+/* Citizen Feild */
+.ApplicationFormPage-unsubmitted-form-citizen {
+	margin-bottom: 5%;
+}
+
+.ApplicationFormPage-unsubmitted-form-textInput {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 10px;
+}
+
+.ApplicationFormPage-unsubmitted-form-textInput input {
+	width: 10rem;
 }
 
 .ApplicationFormPage-unsubmitted-form-textarea {
@@ -43,9 +142,8 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	width: 80%;
 	min-width: 25rem;
-	margin-bottom: 2%;
+	margin: 10px;
 }
 .ApplicationFormPage-unsubmitted-form-textarea textarea {
 	height: 5rem;
@@ -56,9 +154,8 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	width: 80%;
 	min-width: 25rem;
-	margin-bottom: 2%;
+	margin: 10px;
 }
 
 .ApplicationFormPage-unsubmitted-form-radioGroup {
@@ -69,10 +166,4 @@
 .ApplicationFormPage-unsubmitted-form-radioGroup input {
 	/* background-color: aliceblue; */
 	margin-left: 10px;
-}
-
-.ApplicationFormPage-unsubmitted-form-textInput input {
-	width: 15rem;
-	max-height: 1.5rem;
-	min-height: 1.5rem;
 }
