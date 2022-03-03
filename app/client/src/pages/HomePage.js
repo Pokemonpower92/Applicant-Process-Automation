@@ -1,11 +1,7 @@
 import { Component } from "react";
 import "../styles/pages/Homepage.css";
 
-class HomePage extends Component {
-	constructor(props) {
-		super(props);
-	}
-
+class Homepage extends Component {
 	render() {
 		return (
 			<div className="Homepage">
@@ -17,4 +13,4 @@ class HomePage extends Component {
 	}
 }
 
-export default HomePage;
+export default Homepage;

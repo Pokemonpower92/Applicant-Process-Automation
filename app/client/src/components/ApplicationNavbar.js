@@ -2,13 +2,14 @@ import { Nav, Navbar, Container } from "react-bootstrap";
 import "../styles/components/ApplicationNavbar.css";
 import Logo from "../img/UT_Logo.png";
 
-function ApplicationNavbar(props) {
+function ApplicationNavbar() {
 	return (
 		<div className="Navbar">
 			<Navbar variant="dark" sticky="top" expand="lg">
 				<Container>
 					<Navbar.Brand href="/" theme="light">
-						<img src={Logo} height="50px" /> EF 437/438 Application
+						<img src={Logo} height="50px" alt="UTK" /> EF 437/438
+						Application
 					</Navbar.Brand>
 
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
