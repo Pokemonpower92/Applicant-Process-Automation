@@ -84,6 +84,9 @@ updateApplication = async (req, res) => {
             message: `Application ${id} not found`,
         });
     });
+    if (res.statusCode == 404) {
+        return;
+    }
 
     if (application) {
         application.name = body.name;
@@ -101,7 +104,7 @@ updateApplication = async (req, res) => {
         application.save()
             .then(() => {
                 return res.status(200).json({
-                    data: application,
+                    application: application,
                 });
             })
             .catch(error => {
@@ -110,6 +113,10 @@ updateApplication = async (req, res) => {
                     message: "There was an error updating your application"
                 });
             })
+    } else {
+        res.status(404).json({
+            message: `Application ${id} not found`,
+        });
     }
 };
 
@@ -121,15 +128,14 @@ deleteApplication = async (req, res) => {
             message: `Application ${id} not found`,
         });
     });
-    if (!application) {
-        return res.status(201).json({
-            message: `Application does not exist`,
-        });
+    if (res.statusCode == 404) {
+        return;
     }
-
-    Application.deleteOne({ _id: application._id })
+    console.log(application);
+    if(application) {
+        Application.deleteOne({ _id: application._id })
         .then(() => {
-            return res.status(201).json({
+            return res.status(200).json({
                 message: `Application deleted`,
             });
         })
@@ -139,6 +145,11 @@ deleteApplication = async (req, res) => {
                 message: "There was an error deleting your application"
             });
         })
+    } else {
+        res.status(201).json({
+            message: `Application ${id} not found`,
+        });
+    }
 };
 
 module.exports = {
