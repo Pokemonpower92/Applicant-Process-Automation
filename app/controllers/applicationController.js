@@ -22,17 +22,20 @@ getApplicationById = async (req, res) => {
     const id = req.params.id;
 
     const application = await Application.findById(id).catch(() => {
-        res.status(404).json({
-            message: `No Application Found with ID ${id}`,
+        res.status(400).json({
+            message: `invalid id ${id}`,
         });
     });
 
     if (application) {
-        console.log("application found");
-        res.status(200).json({
+        return res.status(200).json({
             data: application,
         });
     }
+
+    return res.status(404).json({
+        message: `No Application Found with id: ${id}`,
+    });
 }
 
 updateApplication = async (req, res) => {
