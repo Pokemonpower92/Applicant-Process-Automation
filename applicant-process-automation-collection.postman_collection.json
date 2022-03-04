@@ -1,12 +1,12 @@
 {
 	"info": {
-		"_postman_id": "c62bfeab-0607-4ee9-a9d4-eb05e24a66c4",
-		"name": "applicant-process-automation-collection",
+		"_postman_id": "dd3f2f82-fc29-42ec-929d-61f5c1f146f9",
+		"name": "applicant-process-automation",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "applications",
+			"name": "Find All",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -25,13 +25,13 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "Update",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"_id\": \"621938b54de113a5e3932f7d\",\n    \"name\": \"John Wick\",\n    \"city\": \"Knoxville\",\n    \"zipCode\": \"39712\",\n    \"citizen\": true,\n    \"state\": \"MO\",\n    \"militaryExperience\": null,\n    \"previousExperience\": \"I have some experience\",\n    \"streetAddress\": \"1301 Phillip Fulmer Way\",\n    \"studentId\": \"000123456\",\n    \"contactPhone\": true,\n    \"phoneNumber\": \"5555555555\"\n}",
+					"raw": "{\n    \"_id\": \"621938b54de113a5e3932f7d\",\n    \"name\": \"John Wick II\",\n    \"city\": \"Knoxville\",\n    \"zipCode\": \"39712\",\n    \"citizen\": true,\n    \"state\": \"MO\",\n    \"militaryExperience\": null,\n    \"previousExperience\": \"I have some experience\",\n    \"streetAddress\": \"1301 Phillip Fulmer Way\",\n    \"studentId\": \"000123456\",\n    \"contactPhone\": true,\n    \"phoneNumber\": \"5555555555\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -39,7 +39,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3001/applications/621938b54de113a5e3932f7d/edit",
+					"raw": "http://localhost:3001/applications/621938b54de113a5e3932f7d",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -47,8 +47,55 @@
 					"port": "3001",
 					"path": [
 						"applications",
-						"621938b54de113a5e3932f7d",
-						"edit"
+						"621938b54de113a5e3932f7d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Nick Miller\",\r\n    \"city\": \"Knoxville\",\r\n    \"zipCode\": \"39712\",\r\n    \"citizen\": true,\r\n    \"state\": \"CA\",\r\n    \"militaryExperience\": null,\r\n    \"previousExperience\": \"I have NONE experience\",\r\n    \"streetAddress\": \"1301 Phillip Fulmer Way\",\r\n    \"studentId\": \"000234567\",\r\n    \"contactPhone\": true,\r\n    \"phoneNumber\": \"5555555555\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/applications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"applications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/applications/6221805dc40b2a8bda93817e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"applications",
+						"6221805dc40b2a8bda93817e"
 					]
 				}
 			},
