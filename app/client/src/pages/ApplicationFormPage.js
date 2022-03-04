@@ -341,19 +341,19 @@ class ApplicationFormPage extends Component {
 							<div className="ApplicationFormPage-unsubmitted-form-radioGroup">
 								<input
 									type="radio"
-									name="citizen"
+									name="previousExperience"
 									value={true}
-									checked={this.state.citizen === true}
-									onChange={this.handleCitizenChange}
+									checked={this.state.previousExperience === true}
+									onChange={this.handlePreviousExperienceChange}
 									className="ApplicationFormPage-unsubmitted-form-citizen"
 								/>
 								Yes
 								<input
 									type="radio"
-									name="citizen"
+									name="previousExperience"
 									value={false}
-									checked={this.state.citizen === false}
-									onChange={this.handleCitizenChange}
+									checked={this.state.previousExperience === false}
+									onChange={this.handlePreviousExperienceChange}
 									className="ApplicationFormPage-unsubmitted-form-citizen"
 								/>
 								No
