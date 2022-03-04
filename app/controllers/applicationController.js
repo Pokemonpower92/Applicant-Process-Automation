@@ -39,11 +39,17 @@ updateApplication = async (req, res) => {
         return;
     }
 
+    let serverErrorFlag = false;
     const application = await Application.findById(id).catch(() => {
+        serverErrorFlag = true;
         res.status(404).json({
-            message: `Application ${id} not found`,
+            message: `Unexpected id format: ${id}`,
         });
     });
+
+    if (serverErrorFlag) {
+        return;
+    }
 
     if (application) {
         application.name = body.name;
@@ -70,6 +76,10 @@ updateApplication = async (req, res) => {
                     message: "There was an error updating your application"
                 });
             })
+    } else {
+        res.status(404).json({
+            message: `Application ${id} not found`,
+        });
     }
 };
 
