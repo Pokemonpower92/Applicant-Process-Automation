@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "c62bfeab-0607-4ee9-a9d4-eb05e24a66c4",
+		"name": "applicant-process-automation-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "applications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/applications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"applications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_id\": \"621938b54de113a5e3932f7d\",\n    \"name\": \"John Wick\",\n    \"city\": \"Knoxville\",\n    \"zipCode\": \"39712\",\n    \"citizen\": true,\n    \"state\": \"MO\",\n    \"militaryExperience\": null,\n    \"previousExperience\": \"I have some experience\",\n    \"streetAddress\": \"1301 Phillip Fulmer Way\",\n    \"studentId\": \"000123456\",\n    \"contactPhone\": true,\n    \"phoneNumber\": \"5555555555\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/applications/621938b54de113a5e3932f7d/edit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"applications",
+						"621938b54de113a5e3932f7d",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
