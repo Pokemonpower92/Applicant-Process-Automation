@@ -81,7 +81,7 @@ updateApplication = async (req, res) => {
 
     const application = await Application.findById(id).catch(() => {
         res.status(404).json({
-            message: `Application ${id} not found`,
+            message: `Invalid application id: ${id}`,
         });
     });
     if (res.statusCode == 404) {
@@ -125,17 +125,17 @@ deleteApplication = async (req, res) => {
 
     const application = await Application.findById(id).catch(() => {
         res.status(404).json({
-            message: `Application ${id} not found`,
+            message: `Invalid application id: ${id}`,
         });
     });
     if (res.statusCode == 404) {
         return;
     }
-    console.log(application);
+
     if(application) {
         Application.deleteOne({ _id: application._id })
         .then(() => {
-            return res.status(200).json({
+            return res.status(204).json({
                 message: `Application deleted`,
             });
         })
@@ -146,7 +146,7 @@ deleteApplication = async (req, res) => {
             });
         })
     } else {
-        res.status(201).json({
+        res.status(404).json({
             message: `Application ${id} not found`,
         });
     }
