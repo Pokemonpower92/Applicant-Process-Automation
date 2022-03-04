@@ -27,6 +27,8 @@ getApplicationById = async (req, res) => {
         });
     });
 
+    if (res.statusCode == 400) return;
+
     if (application) {
         return res.status(200).json({
             data: application,
