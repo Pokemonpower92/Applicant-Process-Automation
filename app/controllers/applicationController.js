@@ -1,7 +1,29 @@
 const Application = require("../models/application");
 
 createApplication = async (req, res) => {
+    const body = req.body;
+    if (!body) {
+        res.status(400).json({
+            message: "No body given",
+        });
+        return;
+    }
 
+    const application = new Application(body);
+    application
+    .save()
+    .then(() => {
+        res.status(200).json({
+            id: application._id,
+            message: "New application created",
+        });
+    })
+    .catch(error => {
+        return res.status(400).json({
+            error,
+            message: "There was an error creating your application"
+        });
+    })
 };
 
 getApplications = async (req, res) => {
@@ -9,7 +31,7 @@ getApplications = async (req, res) => {
 
     if (applications) {
         res.status(200).json({
-            data: applications,
+            applications: applications,
         });
     } else {
         res.status(404).json({
@@ -19,8 +41,26 @@ getApplications = async (req, res) => {
 };
 
 getApplicationById = async (req, res) => {
+    const id = req.params.id;
 
-};
+    const application = await Application.findById(id).catch(() => {
+        res.status(400).json({
+            message: `invalid id ${id}`,
+        });
+    });
+
+    if (res.statusCode == 400) return;
+
+    if (application) {
+        return res.status(200).json({
+            data: application,
+        });
+    }
+
+    return res.status(404).json({
+        message: `No Application Found with id: ${id}`,
+    });
+}
 
 updateApplication = async (req, res) => {
     const id = req.params.id;
@@ -41,9 +81,12 @@ updateApplication = async (req, res) => {
 
     const application = await Application.findById(id).catch(() => {
         res.status(404).json({
-            message: `Application ${id} not found`,
+            message: `Invalid application id: ${id}`,
         });
     });
+    if (res.statusCode == 404) {
+        return;
+    }
 
     if (application) {
         application.name = body.name;
@@ -61,7 +104,7 @@ updateApplication = async (req, res) => {
         application.save()
             .then(() => {
                 return res.status(200).json({
-                    data: application,
+                    application: application,
                 });
             })
             .catch(error => {
@@ -70,11 +113,43 @@ updateApplication = async (req, res) => {
                     message: "There was an error updating your application"
                 });
             })
+    } else {
+        res.status(404).json({
+            message: `Application ${id} not found`,
+        });
     }
 };
 
 deleteApplication = async (req, res) => {
+    const id = req.params.id;
 
+    const application = await Application.findById(id).catch(() => {
+        res.status(404).json({
+            message: `Invalid application id: ${id}`,
+        });
+    });
+    if (res.statusCode == 404) {
+        return;
+    }
+
+    if(application) {
+        Application.deleteOne({ _id: application._id })
+        .then(() => {
+            return res.status(204).json({
+                message: `Application deleted`,
+            });
+        })
+        .catch(error => {
+            return res.status(400).json({
+                error,
+                message: "There was an error deleting your application"
+            });
+        })
+    } else {
+        res.status(404).json({
+            message: `Application ${id} not found`,
+        });
+    }
 };
 
 module.exports = {
