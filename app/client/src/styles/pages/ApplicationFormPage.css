@@ -32,7 +32,7 @@ label {
 	flex-direction: column;
 }
 
-/* Name feilds */
+/* Name fields */
 .ApplicationFormPage-unsubmitted-form-name {
 	display: flex;
 	flex-direction: column;
@@ -43,6 +43,23 @@ label {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+}
+
+.ApplicationFormPage-unsubmitted-form-id-fields {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.ApplicationFormPage-unsubmitted-form-idTextInput {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 10px;
+}
+
+.ApplicationFormPage-unsubmitted-form-idTextInput input {
+	width: 100%;
 }
 
 .ApplicationFormPage-unsubmitted-form-nameTextInput {
@@ -57,7 +74,7 @@ label {
 	margin-left: 10px;
 }
 
-/* Address feilds */
+/* Address fields */
 .ApplicationFormPage-unsubmitted-form-address {
 	display: flex;
 	flex-direction: column;
@@ -85,14 +102,14 @@ label {
 }
 
 .ApplicationFormPage-unsubmitted-form-streetTextInput input {
-	width: 20rem;
+	width: 100%;
 }
 
 .ApplicationFormPage-unsubmitted-form-address-other {
 	display: flex;
 }
 
-/* Contact Feilds */
+/* Contact fields */
 .ApplicationFormPage-unsubmitted-form-contact {
 	display: flex;
 	flex-direction: column;
@@ -113,15 +130,15 @@ label {
 }
 
 .ApplicationFormPage-unsubmitted-form-contactTextInput input {
-	width: 15rem;
+	width: 100%;
 }
 
-/* Experience Feilds */
+/* Experience Fields */
 .ApplicationFormPage-unsubmitted-form-experience {
 	margin-bottom: 5%;
 }
 
-/* Citizen Feild */
+/* Citizen Field */
 .ApplicationFormPage-unsubmitted-form-citizen {
 	margin-bottom: 5%;
 }
@@ -145,6 +162,7 @@ label {
 	min-width: 25rem;
 	margin: 10px;
 }
+
 .ApplicationFormPage-unsubmitted-form-textarea textarea {
 	height: 5rem;
 }
