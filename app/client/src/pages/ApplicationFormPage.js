@@ -10,6 +10,7 @@ class ApplicationFormPage extends Component {
 			middleName: "",
 			lastName: "",
 			id: "",
+			netId: "",
 			address: "",
 			city: "",
 			state: "",
@@ -29,6 +30,7 @@ class ApplicationFormPage extends Component {
 		this.handleMiddleNameChange = this.handleMiddleNameChange.bind(this);
 		this.handleLastNameChange = this.handleLastNameChange.bind(this);
 		this.handleIdChange = this.handleIdChange.bind(this);
+		this.handleNetIdChange = this.handleNetIdChange.bind(this);
 		this.handleAddressChange = this.handleAddressChange.bind(this);
 		this.handleCityChange = this.handleCityChange.bind(this);
 		this.handleStateChange = this.handleStateChange.bind(this);
@@ -78,6 +80,12 @@ class ApplicationFormPage extends Component {
 	};
 
 	handleIdChange = (e) => {
+		this.setState({
+			[e.target.name]: e.target.value,
+		});
+	};
+
+	handleNetIdChange = (e) => {
 		this.setState({
 			[e.target.name]: e.target.value,
 		});
@@ -185,7 +193,7 @@ class ApplicationFormPage extends Component {
 									name="name"
 									value={this.state.name}
 									onChange={this.handleFirstNameChange}
-									className="ApplicationFormPage-unsubmitted-form-nameFeild"
+									className="ApplicationFormPage-unsubmitted-form-nameField"
 								></input>
 								<label>First Name</label>
 							</div>
@@ -195,7 +203,7 @@ class ApplicationFormPage extends Component {
 									name="name"
 									value={this.state.name}
 									onChange={this.handleMiddleNameChange}
-									className="ApplicationFormPage-unsubmitted-form-nameFeild"
+									className="ApplicationFormPage-unsubmitted-form-nameField"
 								></input>
 								<label>Middle Name</label>
 							</div>
@@ -205,13 +213,13 @@ class ApplicationFormPage extends Component {
 									name="name"
 									value={this.state.name}
 									onChange={this.handleLastNameChange}
-									className="ApplicationFormPage-unsubmitted-form-nameFeild"
+									className="ApplicationFormPage-unsubmitted-form-nameField"
 								></input>
 								<label>Last Name</label>
 							</div>
 						</div>
-						<div className="ApplicationFormPage-unsubmitted-form-id">
-							<div className="ApplicationFormPage-unsubmitted-form-textInput">
+						<div className="ApplicationFormPage-unsubmitted-form-id-fields">
+							<div className="ApplicationFormPage-unsubmitted-form-idTextInput">
 								<input
 									type="text"
 									name="id"
@@ -220,6 +228,16 @@ class ApplicationFormPage extends Component {
 									className="ApplicationFormPage-unsubmitted-form-id"
 								></input>
 								<label>UTK Student ID</label>
+							</div>
+							<div className="ApplicationFormPage-unsubmitted-form-idTextInput">
+								<input
+									type="text"
+									name="netId"
+									value={this.state.id}
+									onChange={this.handleNetIdChange}
+									className="ApplicationFormPage-unsubmitted-form-id"
+								></input>
+								<label>UTK Net ID</label>
 							</div>
 						</div>
 					</div>
@@ -341,20 +359,26 @@ class ApplicationFormPage extends Component {
 							<div className="ApplicationFormPage-unsubmitted-form-radioGroup">
 								<input
 									type="radio"
-									name="citizen"
+									name="previousExperience"
 									value={true}
-									checked={this.state.citizen === true}
-									onChange={this.handleCitizenChange}
-									className="ApplicationFormPage-unsubmitted-form-citizen"
+									checked={
+										this.state.previousExperience === true
+									}
+									onChange={
+										this.handlePreviousExperienceChange
+									}
 								/>
 								Yes
 								<input
 									type="radio"
-									name="citizen"
+									name="previousExperience"
 									value={false}
-									checked={this.state.citizen === false}
-									onChange={this.handleCitizenChange}
-									className="ApplicationFormPage-unsubmitted-form-citizen"
+									checked={
+										this.state.previousExperience === false
+									}
+									onChange={
+										this.handlePreviousExperienceChange
+									}
 								/>
 								No
 							</div>
@@ -363,7 +387,7 @@ class ApplicationFormPage extends Component {
 						<div className="ApplicationFormPage-unsubmitted-form-textarea">
 							<textarea
 								type="textarea"
-								name="previousExperience"
+								name="previousExperienceDetails"
 								value={this.state.previousExperienceDetails}
 								placeholder="Leave blank if not applicable."
 								onChange={
@@ -374,9 +398,35 @@ class ApplicationFormPage extends Component {
 						</div>
 						<div className="ApplicationFormPage-unsubmitted-form-textarea">
 							<label>Military Experience: </label>
+							<div className="ApplicationFormPage-unsubmitted-form-radioGroup">
+								<input
+									type="radio"
+									name="militaryExperience"
+									value={true}
+									checked={
+										this.state.militaryExperience === true
+									}
+									onChange={
+										this.handleMilitaryExperienceChange
+									}
+								/>
+								Yes
+								<input
+									type="radio"
+									name="militaryExperience"
+									value={false}
+									checked={
+										this.state.militaryExperience === false
+									}
+									onChange={
+										this.handleMilitaryExperienceChange
+									}
+								/>
+								No
+							</div>
 							<textarea
-								type="radio"
-								name="militaryExperience"
+								type="textarea"
+								name="militaryExperienceDetails"
 								value={this.state.militaryExperienceDetails}
 								placeholder="Leave blank if not applicable."
 								onChange={
