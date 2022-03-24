@@ -100,6 +100,10 @@ updateApplication = async (req, res) => {
         application.militaryExperience = body.militaryExperience;
         application.contactPhone = body.contactPhone;
         application.phoneNumber = body.phoneNumber;
+        application.netId = body.netId;
+        application.email = body.email;
+        application.previousExperienceDetails = body.previousExperienceDetails;
+        application.militaryExperienceDetails = body.militaryExperienceDetails;
 
         application.save()
             .then(() => {

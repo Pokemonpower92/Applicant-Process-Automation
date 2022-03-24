@@ -5,6 +5,10 @@ const ApplicationSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    netId: {
+        type: String,
+        required: true
+    },
     studentId: {
         type: String,
         required: true
@@ -30,10 +34,18 @@ const ApplicationSchema = new mongoose.Schema({
         required: true
     },
     previousExperience: {
-        type: String,
+        type: Boolean,
         required: true
     },
+    previousExperienceDetails: {
+        type: String,
+        required: false
+    },
     militaryExperience: {
+        type: Boolean,
+        required: false
+    },
+    militaryExperienceDetails: {
         type: String,
         required: false
     },
@@ -44,7 +56,11 @@ const ApplicationSchema = new mongoose.Schema({
     phoneNumber: {
         type: String,
         required: true
-    }
+    },
+    email: {
+        type: String,
+        required: true
+    },
 });
 
 const Application = mongoose.model('application', ApplicationSchema);
