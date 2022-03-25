@@ -1,4 +1,6 @@
 import { Component } from "react";
+import { applicationAPI } from "../api";
+import { Button } from "react-bootstrap";
 import "../styles/pages/ApplicationFormPage.css";
 
 class ApplicationFormPage extends Component {
@@ -9,13 +11,13 @@ class ApplicationFormPage extends Component {
 			firstName: "",
 			middleName: "",
 			lastName: "",
-			id: "",
+			studentId: "",
 			netId: "",
-			address: "",
+			streetAddress: "",
 			city: "",
 			state: "",
-			zip: "",
-			phone: "",
+			zipCode: "",
+			phoneNumber: "",
 			email: "",
 			citizen: false,
 			previousExperience: false,
@@ -25,7 +27,6 @@ class ApplicationFormPage extends Component {
 			contactAgreement: false,
 		};
 
-		this.handleSubmitClick = this.handleSubmitClick.bind(this);
 		this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
 		this.handleMiddleNameChange = this.handleMiddleNameChange.bind(this);
 		this.handleLastNameChange = this.handleLastNameChange.bind(this);
@@ -48,17 +49,13 @@ class ApplicationFormPage extends Component {
 			this.handleMilitaryExperienceDetailsChange.bind(this);
 		this.handleContactAggreementChange =
 			this.handleContactAggreementChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	componentDidMount = () => {
 		this.setState({
 			submitted: false,
 		});
-	};
-
-	handleSubmitClick = (e) => {
-		const { history } = this.props;
-		history.push(`/ApplicationForm`);
 	};
 
 	handleFirstNameChange = (e) => {
@@ -167,6 +164,23 @@ class ApplicationFormPage extends Component {
 		});
 	};
 
+	handleSubmit = async (evt) => {
+		const { firstName, middleName, lastName, studentId, netId, streetAddress, city, state, zipCode, phoneNumber, email, citizen, previousExperience, previousExperienceDetails, militaryExperience, militaryExperienceDetails, contactAgreement } =
+				this.state;
+		const payload = { status: "Submitted", name: firstName+' '+middleName+' '+lastName, studentId, netId, streetAddress, city, state, zipCode, phoneNumber, email, citizen, previousExperience, previousExperienceDetails, militaryExperience, militaryExperienceDetails, contactPhone:contactAgreement };
+
+		await applicationAPI
+				.createApplication(payload)
+				.then((res) => {
+						this.setState({
+							submitted: true,
+						});
+				})
+				.catch(err => {
+						console.log(err);
+				})
+};
+
 	render() {
 		const submitted = (
 			<div className="ApplicationFormPage-submitted">
@@ -190,8 +204,8 @@ class ApplicationFormPage extends Component {
 							<div className="ApplicationFormPage-unsubmitted-form-nameTextInput">
 								<input
 									type="text"
-									name="name"
-									value={this.state.name}
+									name="firstName"
+									value={this.state.firstName}
 									onChange={this.handleFirstNameChange}
 									className="ApplicationFormPage-unsubmitted-form-nameField"
 								></input>
@@ -200,8 +214,8 @@ class ApplicationFormPage extends Component {
 							<div className="ApplicationFormPage-unsubmitted-form-nameTextInput">
 								<input
 									type="text"
-									name="name"
-									value={this.state.name}
+									name="middleName"
+									value={this.state.middleName}
 									onChange={this.handleMiddleNameChange}
 									className="ApplicationFormPage-unsubmitted-form-nameField"
 								></input>
@@ -210,8 +224,8 @@ class ApplicationFormPage extends Component {
 							<div className="ApplicationFormPage-unsubmitted-form-nameTextInput">
 								<input
 									type="text"
-									name="name"
-									value={this.state.name}
+									name="lastName"
+									value={this.state.lastName}
 									onChange={this.handleLastNameChange}
 									className="ApplicationFormPage-unsubmitted-form-nameField"
 								></input>
@@ -222,8 +236,8 @@ class ApplicationFormPage extends Component {
 							<div className="ApplicationFormPage-unsubmitted-form-idTextInput">
 								<input
 									type="text"
-									name="id"
-									value={this.state.id}
+									name="studentId"
+									value={this.state.studentId}
 									onChange={this.handleIdChange}
 									className="ApplicationFormPage-unsubmitted-form-id"
 								></input>
@@ -233,7 +247,7 @@ class ApplicationFormPage extends Component {
 								<input
 									type="text"
 									name="netId"
-									value={this.state.id}
+									value={this.state.netId}
 									onChange={this.handleNetIdChange}
 									className="ApplicationFormPage-unsubmitted-form-id"
 								></input>
@@ -250,8 +264,8 @@ class ApplicationFormPage extends Component {
 							<div className="ApplicationFormPage-unsubmitted-form-streetTextInput">
 								<input
 									type="text"
-									name="address"
-									value={this.state.address}
+									name="streetAddress"
+									value={this.state.streetAddress}
 									onChange={this.handleAddressChange}
 									className="ApplicationFormPage-unsubmitted-form-street"
 								></input>
@@ -282,8 +296,8 @@ class ApplicationFormPage extends Component {
 							<div className="ApplicationFormPage-unsubmitted-form-otherTextInput">
 								<input
 									type="text"
-									name="zip"
-									value={this.state.zip}
+									name="zipCode"
+									value={this.state.zipCode}
 									onChange={this.handleZipChange}
 									className="ApplicationFormPage-unsubmitted-form-zip"
 								></input>
@@ -300,8 +314,8 @@ class ApplicationFormPage extends Component {
 							<div className="ApplicationFormPage-unsubmitted-form-contactTextInput">
 								<input
 									type="text"
-									name="phone"
-									value={this.state.phone}
+									name="phoneNumber"
+									value={this.state.phoneNumber}
 									onChange={this.handlePhoneChange}
 									className="ApplicationFormPage-unsubmitted-form-phone"
 								></input>
@@ -465,6 +479,9 @@ class ApplicationFormPage extends Component {
 						</div>
 					</div>
 				</form>
+				<Button variant="secondary" onClick={this.handleSubmit}>
+                            Submit
+        </Button>
 			</div>
 		);
 

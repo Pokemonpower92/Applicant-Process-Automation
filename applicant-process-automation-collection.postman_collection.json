@@ -25,19 +25,10 @@
 			"response": []
 		},
 		{
-			"name": "Update",
+			"name": "Find",
 			"request": {
-				"method": "PUT",
+				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"_id\": \"621938b54de113a5e3932f7d\",\n    \"name\": \"John Wick II\",\n    \"city\": \"Knoxville\",\n    \"zipCode\": \"39712\",\n    \"citizen\": true,\n    \"state\": \"MO\",\n    \"militaryExperience\": null,\n    \"previousExperience\": \"I have some experience\",\n    \"streetAddress\": \"1301 Phillip Fulmer Way\",\n    \"studentId\": \"000123456\",\n    \"contactPhone\": true,\n    \"phoneNumber\": \"5555555555\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
 					"raw": "http://localhost:3001/applications/621938b54de113a5e3932f7d",
 					"protocol": "http",
@@ -54,13 +45,42 @@
 			"response": []
 		},
 		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_id\": \"623cee2ab9d140c8428afb7c\",\n    \"name\": \"Winston C Bishop\",\n    \"city\": \"Los Angeles\",\n    \"zipCode\": \"87912\",\n    \"citizen\": true,\n    \"state\": \"CA\",\n    \"militaryExperience\": true,\n    \"previousExperience\": true,\n    \"militaryExperienceDetails\": \"I am educated.\",\n    \"previousExperienceDetails\": null,\n    \"streetAddress\": \"1492 Columbus Way\",\n    \"studentId\": \"000123456\",\n    \"netId\": \"winbis19\",\n    \"email\":\"winbis19@vols.utk.edu\",\n    \"contactPhone\": true,\n    \"phoneNumber\": \"5555555555\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/applications/623cee2ab9d140c8428afb7c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"applications",
+						"623cee2ab9d140c8428afb7c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Create",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Nick Miller\",\r\n    \"city\": \"Knoxville\",\r\n    \"zipCode\": \"39712\",\r\n    \"citizen\": true,\r\n    \"state\": \"CA\",\r\n    \"militaryExperience\": null,\r\n    \"previousExperience\": \"I have NONE experience\",\r\n    \"streetAddress\": \"1301 Phillip Fulmer Way\",\r\n    \"studentId\": \"000234567\",\r\n    \"contactPhone\": true,\r\n    \"phoneNumber\": \"5555555555\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Winston C Bishop\",\r\n    \"city\": \"Los Angeles\",\r\n    \"zipCode\": \"87912\",\r\n    \"citizen\": true,\r\n    \"state\": \"CA\",\r\n    \"militaryExperience\": true,\r\n    \"previousExperience\": true,\r\n    \"militaryExperienceDetails\": \"I am educated.\",\r\n    \"previousExperienceDetails\": null,\r\n    \"streetAddress\": \"1492 Columbus Way\",\r\n    \"studentId\": \"000123456\",\r\n    \"netId\": \"winbis19\",\r\n    \"email\":\"winbis19@vols.utk.edu\",\r\n    \"contactPhone\": true,\r\n    \"phoneNumber\": \"5555555555\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
