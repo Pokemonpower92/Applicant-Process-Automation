@@ -167,7 +167,7 @@ class ApplicationFormPage extends Component {
 	handleSubmit = async (evt) => {
 		const { firstName, middleName, lastName, studentId, netId, streetAddress, city, state, zipCode, phoneNumber, email, citizen, previousExperience, previousExperienceDetails, militaryExperience, militaryExperienceDetails, contactAgreement } =
 				this.state;
-		const payload = { submitted: true, name: firstName+' '+middleName+' '+lastName, studentId, netId, streetAddress, city, state, zipCode, phoneNumber, email, citizen, previousExperience, previousExperienceDetails, militaryExperience, militaryExperienceDetails, contactPhone:contactAgreement };
+		const payload = { status: "Submitted", name: firstName+' '+middleName+' '+lastName, studentId, netId, streetAddress, city, state, zipCode, phoneNumber, email, citizen, previousExperience, previousExperienceDetails, militaryExperience, militaryExperienceDetails, contactPhone:contactAgreement };
 
 		await applicationAPI
 				.createApplication(payload)

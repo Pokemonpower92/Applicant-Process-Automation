@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const ApplicationSchema = new mongoose.Schema({
+    status: {
+        type: String,
+        required: true
+    },
     name: {
         type: String,
         required: true

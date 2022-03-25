@@ -90,6 +90,7 @@ updateApplication = async (req, res) => {
 
     if (application) {
         application.name = body.name;
+        application.status = body.status;
         application.studentId = body.studentId;
         application.streetAddress = body.streetAddress;
         application.city = body.city;
